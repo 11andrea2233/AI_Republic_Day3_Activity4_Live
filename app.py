@@ -22,7 +22,7 @@ st.set_page_config(page_title="News Summarizer Tool", page_icon="", layout="wide
 
 #This is the side bar
 with st.sidebar :
-    st.image('images/White_AI Republic.png')
+    st.image('')
     openai.api_key = st.text_input('Enter OpenAI API token:', type='password')
     if not (openai.api_key.startswith('sk-') and len(openai.api_key)==164):
         st.warning('Please enter your OpenAI API token!', icon='⚠️')
