@@ -21,13 +21,13 @@ warnings.filterwarnings("ignore")
 st.set_page_config(page_title="News Summarizer Tool", page_icon="", layout="wide") #Page title (The title is News SUmmarizer Tool)
 
 #This is the side bar
-with st.sidebar : 
-    openai.api_key = st.text_input("Enter OpenAI API token", type='password')
+with st.sidebar :
+    st.image('images/White_AI Republic.png')
+    openai.api_key = st.text_input('Enter OpenAI API token:', type='password')
     if not (openai.api_key.startswith('sk-') and len(openai.api_key)==164):
-        st.warning("Please enter you OpenAI API token!")
+        st.warning('Please enter your OpenAI API token!', icon='⚠️')
     else:
-        st.succeed("Proceed to entering your promt message!")
-    
+        st.success('Proceed to entering your prompt message!', icon='👉')
     with st.container() :
         l, m, r = st.columns((1, 3, 1))
         with l : st.empty()
@@ -54,7 +54,7 @@ if 'messages' not in st.session_state:
 if 'chat_session' not in st.session_state:
     st.session_state.chat_session = None
 
-elif options == "Home":
+if options == "Home":
     st.title("Title")
     st.write("Write Text")
 
